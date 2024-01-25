@@ -1,11 +1,15 @@
 "use client"
 
 import { useState } from "react"
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/slice";
 
 const AddUser = () => {
     const [name, setName]=useState("");
+    const dispatch=useDispatch();
     function handleSubmit(){
-        console.log(name);
+      dispatch(addUser(name))
+        // console.log(name);
     }
   return (
     <div>
